@@ -2,8 +2,8 @@
 
 - name: "Set the host to wait for"
   set_fact:
-    update_host: "{{ (hostvars[inventory_hostname]['ansible_host'] is defined) |
-                      ternary(hostvars[inventory_hostname]['ansible_host'],
+    update_host: "{{ (hostvars[inventory_hostname]['ansible_hostname'] is defined) |
+                      ternary(hostvars[inventory_hostname]['ansible_hostname'],
                               hostvars[inventory_hostname]['ansible_ssh_host']) }}"
 
 - name: "Waiting for server to come back"
